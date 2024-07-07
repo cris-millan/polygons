@@ -1,19 +1,12 @@
-## Dockerfile
-#
-## Usa una imagen base de Python
-#FROM python:3.12
-#
-## Establece el directorio de trabajo dentro del contenedor
-#WORKDIR /app
-#
-## Copia los archivos de requerimientos
-#COPY requirements.txt .
-#
-## Instala las dependencias
-#RUN pip install -r requirements.txt
-#
-## Copia el resto de los archivos del proyecto
-#COPY . .
-#
-## Comando para iniciar la aplicación FastAPI
-#CMD ["uvicorn", "src.main:app"]
+
+FROM python:3.12
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]

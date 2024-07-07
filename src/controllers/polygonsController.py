@@ -74,7 +74,7 @@ class PolygonsController:
                 })
 
         #validate file headers
-        required_columns = ['name', 'description', 'category']
+        required_columns = ['name', 'description', 'geometry']
         missing_columns = [col for col in required_columns if col not in df.columns]
 
         if len(missing_columns) > 0:

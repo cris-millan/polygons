@@ -15,6 +15,18 @@ services:
     networks:
       - my_network
 
+  app:
+    build: .
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URI: "postgresql://user:password@db:5432/sinecta"  # Cambia 'db' por el nombre del servicio del contenedor de PostgreSQL
+    networks:
+      - my_network
+
 volumes:
   postgres_data:
 
