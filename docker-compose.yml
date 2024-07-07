@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URI: "postgresql://user:password@db:5432/sinecta"  # Cambia 'db' por el nombre del servicio del contenedor de PostgreSQL
+      DATABASE_URI: "postgresql://user:password@db:5432/sinecta"
     networks:
       - my_network
 
